@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 
+import dotenv from "dotenv";
+dotenv.config();
+
 // reading the json file and converting it to an array
 const content = JSON.parse(fs.readFileSync("./db.json"));
 
@@ -32,6 +35,21 @@ router.post("/additem", (req, res) => {
     content,
   });
 });
+
+// const __dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+// --------------------------deployment------------------------------
 
 /* 
     Updating a new item to the json file through the put method http://localhost:8080/api/update/:id
