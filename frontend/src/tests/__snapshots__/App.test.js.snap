@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favourites component 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="p-3 bg-dark text-white"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      >
+        <h1
+          className=" text-center"
+        >
+          iTunes Search
+        </h1>
+        <input
+          className="form-control form-control-dark text-white bg-dark"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          placeholder="Search for an artist..."
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </header>
+  <div
+    className="container"
+  >
+    <h2>
+      Favourites
+    </h2>
+    <div
+      className="album py-5 bg-light"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
